@@ -1,0 +1,14 @@
+#!name=Shortcut
+#!desc=修改 ShortcutStudio generate 请求模型参数与设备安装 ID
+#!author=ios151
+#!homepage=https://github.com/Yu9191/shortcutstudio-rewrite
+#!category=快捷指令
+
+[Script]
+http-request ^https:\/\/api\.shortcutstudio\.app\/generate(?:[/?#]|$) script-path=https://raw.githubusercontent.com/Yu9191/shortcutstudio-rewrite/refs/heads/baby/dist/request.js, tag=ShortcutStudio Generate, requires-body=true, max-size=0, timeout=30, argument="thinkingMode=auto&searchWebMode=off&deviceIdReuseLimit=2&signRewrite=off", enable=true
+http-request ^https:\/\/api\.shortcutstudio\.app\/users\/me\/limits(?:[/?#]|$) script-path=https://raw.githubusercontent.com/Yu9191/shortcutstudio-rewrite/refs/heads/baby/dist/request.js, tag=ShortcutStudio Limits, requires-body=false, max-size=0, timeout=30, argument="thinkingMode=auto&searchWebMode=off&deviceIdReuseLimit=2&signRewrite=off", enable=true
+http-request ^https:\/\/api\.shortcutstudio\.app\/sign(?:[/?#]|$) script-path=https://raw.githubusercontent.com/Yu9191/shortcutstudio-rewrite/refs/heads/baby/dist/request.js, tag=ShortcutStudio Sign, requires-body=false, max-size=0, timeout=30, argument="thinkingMode=auto&searchWebMode=off&deviceIdReuseLimit=2&signRewrite=off", enable=true
+http-response ^https:\/\/api\.shortcutstudio\.app\/users\/me\/limits(?:[/?#]|$) script-path=https://raw.githubusercontent.com/Yu9191/shortcutstudio-rewrite/refs/heads/baby/dist/response.js, tag=ShortcutStudio Limits Mock, requires-body=true, max-size=0, timeout=30, argument="limitsMock=off&messagesLimit=999&downloadsLimit=999&searchesLimit=999&uploadsLimit=999&marketplaceDownloadsLimit=999&chatInputCharsLimit=20000", enable=true
+
+[MITM]
+hostname = api.shortcutstudio.app

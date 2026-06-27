@@ -1,0 +1,28 @@
+{
+	"name": "shortcutstudio-rewrite",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "rollup -c",
+		"build:dev": "rollup --config --configDev",
+		"test": "node --test test"
+	},
+	"author": "Yu9191",
+	"contributors": [
+		"Yu9191"
+	],
+	"license": "MIT",
+	"dependencies": {
+		"@nsnanocat/util": "^2.6.11",
+		"fetch-cookie": "^3.2.0",
+		"node-fetch": "^3.3.2"
+	},
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^25.0.8",
+		"@rollup/plugin-json": "^6.1.0",
+		"@rollup/plugin-node-resolve": "^16.0.3",
+		"@rollup/plugin-terser": "^0.4.4",
+		"rollup": "^4.60.1"
+	}
+}
